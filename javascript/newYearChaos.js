@@ -3,43 +3,34 @@ https://www.hackerrank.com/challenges/new-year-chaos/problem?h_l=interview&playl
 */
 
 function minimumBribes(q) {
-
     const countDict = {};
-    let lastSwap = 0;
-
-    for(let [i, v] of q) {
-
-        if(v > q[i + 1]) {
-
-            let tmp = v;
-            v = q[i + 1];
+    let printed = false;
+    for(let i = 0; i < q.length; i++) {
+        if(q[i] > q[i + 1]) {
+            let tmp = q[i];
+            q[i] = q[i + 1];
             q[i + 1] = tmp;
-
             if(countDict[q[i + 1]] !== undefined) {
-
                 if(countDict[q[i + 1]] < 2) {
-
                     countDict[q[i + 1]]++;
-
                 } else {
-
                     console.log("Too chaotic");
-
+                    printed = true;
+                    break;
                 }
-
             } else {
-
                 countDict[q[i + 1]] = 1;
-
             }
-
-            lastSwap = (i - 1) < 0 ? 0 : (i - 1);
-            break;
-
+            i = (i - 2) < -1 ? 0 : (i - 2);
         }
-
     }
-
+    if(!printed) {
+        let swaps = 0;
+        for(let elem in countDict) {
+            swaps += countDict[elem];
+        }
+        console.log(swaps);
+    }
 }
 
 const tests = [

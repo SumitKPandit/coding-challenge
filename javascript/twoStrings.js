@@ -1,3 +1,10 @@
+/*
+    Author: Sumit Kumar Pandit
+    Date: 21 May 2020
+    Problem Title: Two Strings | HackerRank
+    Problem Link: https://rb.gy/cjxpfs
+*/
+
 function twoStrings(s1, s2) {
     const s1Dict = {};
     for(let char of s1) {

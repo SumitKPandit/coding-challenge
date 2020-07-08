@@ -3,6 +3,7 @@
     Date: 7 July 2020
     Problem Title: Luck Balance | HackerRank
     Problem Link: https://bit.ly/2C9ZV9J
+    Remarks: This solution needs improvement
 */
 
 function luckBalance(k, contests) {
